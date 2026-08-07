@@ -1,0 +1,25 @@
+[project]
+name = "registro-personal"
+version = "1.0.0"
+description = "Generado por Arcana Builder con estándares profesionales"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.100",
+    "uvicorn>=0.23",
+    "sqlalchemy>=2.0",
+    "pydantic>=2.0",
+    "python-jose[cryptography]>=3.3",
+    "bcrypt>=4.0",
+    "pytest>=7.4",
+    "httpx>=0.24",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["api", "api.services", "api.repositories", "api.validators", "api.routers"]

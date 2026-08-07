@@ -1,0 +1,88 @@
+[project]
+name = "ai-dev-guide"
+version = "1.0.0"
+description = "Sistema educativo de desarrollo de software asistido por IA — guía paso a paso con estándares profesionales"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "AI-Dev-Guide Team"}
+]
+keywords = ["education", "software-engineering", "tdd", "bdd", "owasp", "iso-25010", "solid"]
+
+dependencies = [
+    # Core
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "textual>=0.40",
+    "typer>=0.9",
+
+    # Proyecto ejemplo (TaskFlow)
+    "fastapi>=0.100",
+    "uvicorn>=0.23",
+    "sqlalchemy>=2.0",
+    "python-jose[cryptography]>=3.3",
+    "bcrypt>=4.0",
+    "httpx>=0.24",
+
+    # Testing
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-asyncio>=0.21",
+    "behave>=1.2",
+    "locust>=2.15",
+
+    # Seguridad
+    "bandit>=1.7",
+    "pip-audit>=2.6",
+    "safety>=2.3",
+
+    # Calidad de código
+    "black>=23.0",
+    "isort>=5.12",
+    "ruff>=0.1",
+    "mypy>=1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.3",
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.0",
+]
+
+[project.scripts]
+guide = "orchestrator.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.coverage.run]
+source = ["orchestrator", "agents"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

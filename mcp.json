@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "arcana-auditor": {
+      "command": "python",
+      "args": ["-m", "arcana_auditor.mcp_server"],
+      "cwd": "."
+    },
+    "arcana-builder": {
+      "command": "python",
+      "args": ["-m", "arcana_builder.mcp_server"],
+      "cwd": "."
+    },
+    "arcana-tutor": {
+      "command": "python",
+      "args": ["-m", "arcana_tutor.mcp_server"],
+      "cwd": "."
+    },
+    "arcana-orchestrator": {
+      "command": "python",
+      "args": ["-m", "arcana_orchestrator.mcp_server"],
+      "cwd": "."
+    }
+  }
+}

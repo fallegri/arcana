@@ -1,0 +1,83 @@
+# AI-Dev-Guide — Configuración por defecto del pipeline
+# ====================================================
+#
+# Este archivo define qué fases ejecutar, con qué agentes,
+# y los umbrales de calidad esperados.
+#
+# Referencia: SDD Sección 2.1 (Vista Funcional)
+
+project_name: "taskflow-example"
+project_path: "./examples/taskflow"
+educational_mode: "standard"  # beginner | standard | expert
+output_format: "rich"         # rich | json | markdown | plain
+
+# Fases del pipeline de desarrollo
+phases:
+  design:
+    enabled: true
+    agents:
+      - architecture
+      - requirements
+    stop_on_error: false
+    timeout_seconds: 120
+
+  implementation:
+    enabled: true
+    agents:
+      - solid
+      - tdd
+    stop_on_error: true
+    timeout_seconds: 300
+
+  testing:
+    enabled: true
+    agents:
+      - bdd
+      - stress_testing
+      - api_validation
+    stop_on_error: true
+    timeout_seconds: 600
+
+  security:
+    enabled: true
+    agents:
+      - owasp
+      - pentest
+      - osint
+    stop_on_error: false  # Reporta pero no bloquea
+    timeout_seconds: 300
+
+  quality:
+    enabled: true
+    agents:
+      - ux_quality
+      - metrics
+    stop_on_error: false
+    timeout_seconds: 120
+
+# Políticas de APIs externas (anti-saturación)
+api_policies:
+  openai:
+    requests_per_minute: 60
+    failure_threshold: 3
+    recovery_timeout_seconds: 60
+    max_retries: 3
+    base_delay_seconds: 2.0
+    max_daily_cost_usd: 10.0
+
+  local_taskflow_api:
+    requests_per_minute: 1000
+    failure_threshold: 10
+    recovery_timeout_seconds: 5
+    max_retries: 1
+    base_delay_seconds: 0.5
+
+# Umbrales de calidad (ISO 25010 / 25023)
+quality_thresholds:
+  code_coverage_min: 80.0
+  response_time_p95_max_ms: 500.0
+  vulnerabilities_critical_max: 0
+  vulnerabilities_high_max: 0
+  cyclomatic_complexity_max: 10.0
+  documentation_coverage_min: 90.0
+  coupling_between_modules_max: 3

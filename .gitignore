@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite3
+
+# Environment variables (OWASP A05: never commit secrets)
+.env
+.env.local
+.env.production
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Locust reports
+locust_report_*.html
