@@ -1,0 +1,15 @@
+name: "Fintech Domain"
+description: "Sistemas financieros: PCI-DSS, KYC/AML, regulación bancaria, transacciones seguras"
+category: "domain"
+priority: 9
+triggers:
+  - "banco"
+  - "fintech"
+  - "transacción"
+  - "pago"
+  - "tarjeta"
+  - "crédito"
+  - "billetera virtual"
+  - "cripto"
+  - "trading"
+  - "pci-dss"

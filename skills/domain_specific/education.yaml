@@ -1,0 +1,15 @@
+name: "Education Domain"
+description: "Sistemas educativos: LMS, evaluación, SCORM, accesibilidad, datos de menores"
+category: "domain"
+priority: 7
+triggers:
+  - "escuela"
+  - "universidad"
+  - "lms"
+  - "estudiante"
+  - "alumno"
+  - "calificación"
+  - "curso"
+  - "e-learning"
+  - "aula virtual"
+  - "profesor"

@@ -25,6 +25,7 @@ from typing import Optional
 
 from arcana_orchestrator.planner import Planner, DevelopmentPlan
 from arcana_orchestrator.verifier import Verifier
+from arcana_orchestrator.spec_engine import SpecEngine
 
 try:
     from mcp.server import Server
@@ -34,10 +35,35 @@ try:
 except ImportError:
     HAS_MCP = False
 
-# Estado global del plan activo
+# Estado global
 _active_plan: Optional[DevelopmentPlan] = None
 _planner = Planner()
 _verifier = Verifier()
+_spec_engine = SpecEngine()
+
+
+# ═══════════════════════════════════════════════════════════════
+# SPEC FUNCTIONS (FASE 0 — Interactiva)
+# ═══════════════════════════════════════════════════════════════
+
+async def do_spec_start(project_name: str, description: str) -> dict:
+    """Inicia sesión de especificación interactiva."""
+    return _spec_engine.spec_start(project_name, description)
+
+
+async def do_spec_answer(session_id: str, answers: str) -> dict:
+    """Procesa respuestas del usuario y genera más preguntas si necesita."""
+    return _spec_engine.spec_answer(session_id, answers)
+
+
+async def do_spec_confirm(session_id: str, output_path: str = "./output") -> dict:
+    """Confirma la spec y ejecuta pipeline BDD→TDD→Plan."""
+    return _spec_engine.spec_confirm(session_id, output_path)
+
+
+# ═══════════════════════════════════════════════════════════════
+# PLAN FUNCTIONS (FASE 1+)
+# ═══════════════════════════════════════════════════════════════
 
 
 async def do_start(project_name: str, requirements: str, output_path: str) -> dict:

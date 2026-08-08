@@ -1,0 +1,17 @@
+name: "Mobile App"
+description: "Desarrollo de apps móviles: React Native/Flutter patterns, navegación, gestos, offline-first"
+category: "frontend"
+priority: 8
+triggers:
+  - "app móvil"
+  - "aplicación móvil"
+  - "celular"
+  - "smartphone"
+  - "android"
+  - "ios"
+  - "react native"
+  - "flutter"
+  - "mobile"
+dependencies:
+  - "react-native"
+  - "expo"

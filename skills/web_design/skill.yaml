@@ -1,0 +1,19 @@
+name: "Web Design"
+description: "Diseño web profesional: Tailwind CSS, responsive, atomic design, accesibilidad WCAG, SEO"
+category: "frontend"
+priority: 8
+triggers:
+  - "landing"
+  - "página web"
+  - "web app"
+  - "frontend"
+  - "interfaz web"
+  - "portal"
+  - "sitio web"
+  - "html"
+  - "diseño web"
+  - "ui web"
+dependencies:
+  - "tailwindcss"
+  - "html5"
+  - "css3"

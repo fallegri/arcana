@@ -1,0 +1,19 @@
+name: "DevOps & Deployment"
+description: "Docker, CI/CD, Kubernetes, nginx, monitoreo, logging, deployment automatizado"
+category: "infrastructure"
+priority: 7
+triggers:
+  - "docker"
+  - "deploy"
+  - "despliegue"
+  - "producción"
+  - "servidor"
+  - "ci/cd"
+  - "pipeline"
+  - "kubernetes"
+  - "cloud"
+  - "aws"
+  - "nginx"
+dependencies:
+  - "docker"
+  - "docker-compose"

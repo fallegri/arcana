@@ -1,0 +1,14 @@
+name: "Healthcare Domain"
+description: "Sistemas de salud: HIPAA, HL7/FHIR, historia clínica electrónica, consentimiento informado"
+category: "domain"
+priority: 9
+triggers:
+  - "paciente"
+  - "hospital"
+  - "clínica"
+  - "historia clínica"
+  - "diagnóstico"
+  - "receta médica"
+  - "hipaa"
+  - "salud"
+  - "médico"

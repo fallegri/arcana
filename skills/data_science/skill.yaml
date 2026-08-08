@@ -1,0 +1,23 @@
+name: "Data Science & ML"
+description: "Análisis de datos, machine learning, visualización, notebooks, pipelines de datos"
+category: "analytics"
+priority: 7
+triggers:
+  - "análisis de datos"
+  - "machine learning"
+  - "data science"
+  - "predicción"
+  - "modelo"
+  - "dashboard analítico"
+  - "estadístic"
+  - "visualización de datos"
+  - "pandas"
+  - "notebook"
+  - "inteligencia artificial"
+  - "clasificación"
+  - "regresión"
+dependencies:
+  - "pandas"
+  - "scikit-learn"
+  - "matplotlib"
+  - "jupyter"
